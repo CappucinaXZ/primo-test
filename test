@@ -1,10 +1,61 @@
-int[] merged = new int [collection_1.length + collection_3.length]; 
-for(i=0;i<collection_1.length;i++0{
-if(collection_1[i]<=collection_3[i]){ 
-  merged[i] = collection_1[i]; 
-  merged[i + 1] = collection_3[i];
-} else if(collect_3[i]<=collection_1[i]){ 
-  merged[i] =0 collection_3[i]; 
-  merged[i + 1] = collection_1[i];
-}
+public class MergeArray {
+    public static int[] merge(int[] collection_1, int[] collection_2, int[] collection_3){
+        const merged = new int [collection_1.length + collection_3.length];
+        let temp = 0; 
+        if (collection_1.length > collection_3.length) {
+            for(let i = 0; i < collection_1.length; i++){
+                if(collection_1[i]<=collection_3[i]){ 
+                merged[i] = collection_1[i]; 
+                merged[i + 1] = collection_3[i];
+                }
+                if(collection_3[i]<=collection_1[i]){ 
+                merged[i] = collection_3[i]; 
+                merged[i + 1] = collection_1[i];
+                }
+            }
+        }if (collection_1.length < collection_3.length) {
+            for(let i = 0; i < collection_3.length; i++){
+                if(collection_1[i] <= collection_3[i]){ 
+                merged[i] = collection_1[i]; 
+                merged[i + 1] = collection_3[i];
+                }
+                if(collection_3[i]<=collection_1[i]){ 
+                merged[i] = collection_3[i]; 
+                merged[i + 1] = collection_1[i];
+                }
+            }
+        }
+        for(let i = 0; i < collection_2.length; i++){
+            let j = collection_2.length
+            temp = collection_2[j]
+            collection_2[j] = collection_2[i]
+            collection_2[i] = temp;
+            j--;
+        }
+        const merged2 = new int [merged.length + collection_2.length];
+        if (collection_2.length > merged.length) {
+            for(let i = 0; i < collection_2.length; i++){
+                if(collection_2[i]<=merged[i]){ 
+                merged2[i] = collection_2[i]; 
+                merged2[i + 1] = merged[i];
+                }
+                if(merged[i]<=collection_2[i]){ 
+                merged2[i] = merged[i]; 
+                merged2[i + 1] = collection_2[i];
+                }
+            }
+        }if (collection_2.length < merged.length) {
+            for(let i = 0; i < merged.length; i++){
+                if(collection_2[i] <= merged[i]){ 
+                merged2[i] = collection_2[i]; 
+                merged2[i + 1] = merged[i];
+                }
+                if(merged[i]<=collection_2[i]){ 
+                merged2[i] = merged[i]; 
+                merged2[i + 1] = collection_2[i];
+                }
+            }
+        }
+        return merged2;
+    }
 }
