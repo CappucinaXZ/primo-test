@@ -1,7 +1,10 @@
-int[] merged = new int [collection_1.length+collection_3.length]; 
+int[] merged = new int [collection_1.length + collection_3.length]; 
+for(i=0;i<collection_1.length;i++0{
 if(collection_1[i]<=collection_3[i]){ 
   merged[i] = collection_1[i]; 
   merged[i + 1] = collection_3[i];
-}else if(collect_3[i]<=collection_1[i])
-{ merged[i] =0 collection_3[i]; 
-merged[i + 1] = collection_1[i];}
+} else if(collect_3[i]<=collection_1[i]){ 
+  merged[i] =0 collection_3[i]; 
+  merged[i + 1] = collection_1[i];
+}
+}
